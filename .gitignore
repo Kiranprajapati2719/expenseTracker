@@ -20,5 +20,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-build/static/css/main.607b2ceb.css*
-build/static/js/main.1da57547.js*
+build/static/css/main*
+build/static/js/main*
