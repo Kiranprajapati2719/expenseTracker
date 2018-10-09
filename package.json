@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "jest --watchAll --config=jest.config.json",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm build"
+    "heroku-postbuild": "npm run-script build"
   },
   "devDependencies": {
     "babel-jest": "^23.6.0",
