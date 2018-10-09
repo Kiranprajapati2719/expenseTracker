@@ -15,10 +15,12 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/server.js",
+    "run": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --watchAll --config=jest.config.json",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm build"
   },
   "devDependencies": {
     "babel-jest": "^23.6.0",

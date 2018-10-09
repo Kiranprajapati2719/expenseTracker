@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static('build'));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join('build', 'index.html'));
+  res.sendFile(path.join('..','build', 'index.html'));
 });
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
