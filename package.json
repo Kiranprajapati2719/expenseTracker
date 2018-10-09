@@ -16,7 +16,7 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "start:dev": "node server/server.js",
+    "start:prod": "node server/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --watchAll --config=jest.config.json",
