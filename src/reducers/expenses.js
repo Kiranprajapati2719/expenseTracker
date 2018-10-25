@@ -19,7 +19,7 @@ export default (state = defaultExpenses, action) => {
           return {
             //override with existing
             ...expense,
-            ...action.update
+            ...action.updates
           }; 
         }else{
           return expense;
