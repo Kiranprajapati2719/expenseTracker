@@ -5,21 +5,18 @@ import Dashboard from '../components/Dashboard';
 import AddExpensePage from '../components/AddExpensePage';
 import EditExpensePage from '../components/EditExpensePage';
 import LoginPage from '../components/LoginPage';
-import Header from '../components/Header';
+import PrivateRoute from  './PrivateRoute';
 
 export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
-    <div>
-    <Header/>
     <Switch>
-      <Route path="/" exact = {true} render={() => <LoginPage/>}/>
-      <Route path="/dashboard" render={() => <Dashboard/>}/>
-      <Route path="/create" render={(props) => <AddExpensePage {...props} />}/>
-      <Route path="/edit/:id" render={(props) => <EditExpensePage {...props} />}/>
+      <Route path="/" exact = {true} component={ LoginPage}/>
+      <PrivateRoute path="/dashboard" component={ Dashboard}/>
+      <PrivateRoute path="/create" component={ AddExpensePage}/>
+      <PrivateRoute path="/edit/:id" component={ EditExpensePage}/>
     </Switch>
-    </div>
   </Router>
 );
 

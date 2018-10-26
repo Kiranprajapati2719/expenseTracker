@@ -10,13 +10,8 @@ test('should generate login action obj', () => {
 });
 
 test('should generate logout action obj', () => {
-  const id = 'testid'
   const action = logout();
   expect(action).toEqual({
     type: 'LOGOUT'
   });
 });
-
-// test('should setup startLogin', () =>{
-
-// });

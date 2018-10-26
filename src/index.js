@@ -24,7 +24,7 @@ const renderApp = () => {
     hasRendered  = true;
   }
 };
-
+ 
 ReactDOM.render(<div> Loading... </div>, document.getElementById('root'));  
 
 firebase.auth().onAuthStateChanged((user) => {
