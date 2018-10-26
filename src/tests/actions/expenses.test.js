@@ -20,7 +20,7 @@ beforeEach((done) => {
   expenses.forEach(({id, description, note, amount, createdAt}) => {
     expenseData[id] = {description, note, amount, createdAt};
   });
-   database.ref('expenses').set(expenseData).then(() => done());
+  database.ref('expenses').set(expenseData).then(() => done());
 });
 
 test('Should setup remove expense action obj', () => {
