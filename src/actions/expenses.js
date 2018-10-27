@@ -7,20 +7,21 @@ export const addExpense = (expense) => ({
 });
 
 export const startAddExpense = (expenseData = {}) => {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
+  const uid = getState().auth.uid;
     const {
       description = '',
       note = '',
       amount = 0,
       createdAt = 0
     } = expenseData;
-
     const expense = { description, note, amount, createdAt };
-    const ref = await database.ref('expenses').push(expense);
-    dispatch(addExpense({
-      id: ref.key,
-      ...expense
-    }));
+    await database.ref(`users/${uid}/expenses`).push(expense).then((ref) => {
+      dispatch(addExpense({ 
+        id: ref.key,
+        ...expense
+      }));
+    });
   };
 };
 
@@ -33,8 +34,9 @@ export const removeExpense = ({ id } = {}) => ({
 
 //start remove expense
 export const startRemoveExpense = ({id} = {}) => {
-  return async (dispatch) => {
-    await database.ref(`expenses/${id}`).remove();
+  return async (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    await database.ref(`users/${uid}/expenses/${id}`).remove();
     dispatch(removeExpense({ id }));
   }
 }; 
@@ -49,9 +51,10 @@ export const editExpense = (id, updates) => ({
 
 //startEditExpense
 export const startEditExpense = (id, updates) => {
-  return (dispatch) => {
-   return database.ref(`expenses/${id}`).update(updates).then(() => {
-      dispatch(editExpense(id, updates));
+  return async (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/expenses/${id}`).update(updates).then(() =>{
+       dispatch(editExpense(id, updates));
     });
   }
 };
@@ -63,8 +66,9 @@ export const setExpenses = (expenses) => ({
 });
 
 export const startSetExpenses = (expenseData = {}) => {
-  return async (dispatch) => {
-    const snapshot = await database.ref('expenses').once('value');
+  return async (dispatch, getState) => {
+    const uid = getState().auth.uid; 
+    const snapshot = await database.ref(`users/${uid}/expenses`).once('value');
     const expenses = [];
     snapshot.forEach((childSnapshot) => {
       expenses.push({
@@ -75,3 +79,7 @@ export const startSetExpenses = (expenseData = {}) => {
     dispatch(setExpenses(expenses));
   }
 };
+
+
+
+

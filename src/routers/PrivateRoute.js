@@ -5,7 +5,7 @@ import Header from '../components/Header';
 
 export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) => (
   //render routes if authenticated else redirect
-  <Route {...rest} component = {(props) => (
+  <Route {...rest} render = {(props) => (
     isAuthenticated ? (
       <div>
         <Header/>
@@ -15,7 +15,7 @@ export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) =
       <Redirect to='/' />
     )
   )}/>
-);
+);           
 
 const mapStateToProps = (state) => ({
   isAuthenticated: !!state.auth.uid
