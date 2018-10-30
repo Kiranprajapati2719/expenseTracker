@@ -6,6 +6,7 @@
     "firebase": "^5.5.3",
     "history": "^4.7.2",
     "moment": "^2.22.2",
+    "node-sass": "^4.9.4",
     "numeral": "^2.0.6",
     "react": "^16.5.2",
     "react-addons-shallow-compare": "^15.6.2",
@@ -13,7 +14,7 @@
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.0.5",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0"
   },
@@ -21,20 +22,23 @@
     "dev": "node server/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --watchAll --config=jest.config.json",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run-script build"
   },
   "devDependencies": {
     "babel-jest": "^23.6.0",
-    "cross-env": "^5.2.0",
     "dotenv": "^6.1.0",
-    "enzyme": "^3.0.0",
+    "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.0.0",
     "enzyme-to-json": "^3.0.1",
-    "jest": "^23.6.0",
-    "raf": "^3.3.2",
-    "react-test-renderer": "^16.5.2",
+    "react-test-renderer": "^16.6.0",
     "redux-mock-store": "^1.5.3"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

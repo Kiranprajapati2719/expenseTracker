@@ -1,4 +1,4 @@
-import {login, logout, startLogin, startLogout} from '../../actions/auth'
+import {login, logout} from '../../actions/auth'
 
 test('should generate login action obj', () => {
   const uid = 'testid'

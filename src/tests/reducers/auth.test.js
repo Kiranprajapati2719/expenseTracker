@@ -1,6 +1,5 @@
 import authReducer from '../../reducers/auth';
 
-
 test('Should set default state', () => {
   const state = authReducer(undefined, {type: '@@INIT'}); 
   expect(state).toEqual({});
