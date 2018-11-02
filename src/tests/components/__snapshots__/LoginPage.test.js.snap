@@ -1,7 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render LoginPage correctly 1`] = `
-<button>
-   Login 
-</button>
+<Grid
+  className="hero"
+  stackable={true}
+>
+  <GridRow
+    columns={2}
+  >
+    <GridColumn>
+      <Transition
+        animation="fade up"
+        duration="1000"
+        mountOnShow={true}
+        transitionOnMount={false}
+        unmountOnHide={false}
+        visible={false}
+      >
+        <div
+          className="textBox"
+        >
+          <h1>
+            xpendify
+          </h1>
+          <h1>
+             Get your expenses 
+            <br />
+             under control
+          </h1>
+          <p>
+            xpendify helps you keep track of your expenses 
+            <br />
+            so you can efficiently manage your finance. 
+          </p>
+          <Button
+            as="button"
+            role="button"
+          >
+            <Icon
+              as="i"
+              color="red"
+              name="google plus g"
+            />
+              Sign in with Google
+          </Button>
+        </div>
+      </Transition>
+    </GridColumn>
+    <GridColumn />
+  </GridRow>
+</Grid>
 `;

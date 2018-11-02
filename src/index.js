@@ -6,9 +6,10 @@ import configureStore from './store/store';
 import {startSetExpenses} from './actions/expenses';
 import 'react-dates/lib/css/_datepicker.css';
 import {firebase} from './firebase/firebase';
-import {login, logout} from './actions/auth';
+import {login, logout} from './actions/auth'; 
 import Loading from './components/Loading';
 import './styles/main.scss';
+import 'semantic-ui-css/semantic.min.css';
 
 const store = configureStore();
 
@@ -20,6 +21,8 @@ const App = () => (
 
 let hasRendered = false;
 
+ReactDOM.render(<Loading />, document.getElementById('root')); 
+
 const renderApp = () => {
   if(!hasRendered){
     ReactDOM.render(<App />, document.getElementById('root')); 
@@ -27,8 +30,6 @@ const renderApp = () => {
   }
 };
  
-ReactDOM.render(<Loading/>, document.getElementById('root'));  
-
 firebase.auth().onAuthStateChanged((user) => {
   if(user){ 
     store.dispatch(login(user.uid))

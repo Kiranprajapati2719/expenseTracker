@@ -1,13 +1,47 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {startLogin} from '../actions/auth';
-
-export const LoginPage = ({startLogin}) => (
-    <button onClick={startLogin}> Login </button>
-);
-
+import {Grid, Button, Icon, Transition} from 'semantic-ui-react'; 
+ 
+export class LoginPage extends Component {
+	state = {visible: false};
+	componentDidMount(){
+		setTimeout(() => {
+			this.setState({visible: !this.state.visible});
+		},500);
+	}
+	render(){
+	const {visible} = this.state;
+	const {startLogin} = this.props;
+	return(
+	<Grid stackable className='hero'>
+		<Grid.Row columns={2}>
+			<Grid.Column>
+				<Transition visible={visible} animation='fade up' duration='1000'>
+				{	visible &&
+				<div className='textBox'>
+					<h1>xpendify</h1>
+					<h1> Get your expenses <br/> under control</h1>
+					<p>xpendify helps you keep track of your expenses <br/>
+					 so you can efficiently manage your finance. </p>
+					 <Button onClick={startLogin}>
+					  <Icon name='google plus g' color='red'></Icon>
+						 &nbsp; Sign in with Google
+					</Button>
+				</div>
+				}
+				</Transition>
+			</Grid.Column>
+			<Grid.Column>
+				
+			</Grid.Column>
+		</Grid.Row> 
+	</Grid>
+	); 
+	}
+}
 const mapDispatchToProps = (dispatch) => ({
-    startLogin: () => dispatch(startLogin())
+  startLogin: () => dispatch(startLogin())
 });
 
 export default connect(undefined, mapDispatchToProps)(LoginPage);

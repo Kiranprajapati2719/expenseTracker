@@ -17,7 +17,9 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.83.0"
   },
   "scripts": {
     "start": "node server/server.js",
@@ -35,6 +37,9 @@
     "enzyme-to-json": "^3.0.1",
     "react-test-renderer": "^16.6.0",
     "redux-mock-store": "^1.5.3"
+  },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   },
   "browserslist": [
     ">0.2%",
