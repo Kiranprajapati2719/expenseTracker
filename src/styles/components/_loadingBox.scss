@@ -1,16 +1,14 @@
 $hollowBoxSize: 3em;
 $hollowTiming: .5s;
 
-.parent { 
-  background-color: $hollowDark; 
-  text-align: center;
-  display: flex;
+header { 
+  background-color: $primary; 
+  display: flex !important;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
-  margin: 0;
-}
+  width: 100vw;  
+} 
 
 .hollowLoader {
   width: $hollowBoxSize;
@@ -19,7 +17,7 @@ $hollowTiming: .5s;
   outline: 1px solid transparent;
   .largeBox {
     height: $hollowBoxSize;
-    width: $hollowBoxSize;
+    width: $hollowBoxSize; 
     background-color: $hollowLight;
     outline: 1px solid transparent;
     position: fixed;
@@ -27,7 +25,7 @@ $hollowTiming: .5s;
   .smallBox {
     height: $hollowBoxSize;
     width: $hollowBoxSize;
-    background-color: $hollowDark;
+    background-color: $primary;
     position: fixed;
     z-index: 1;
     outline: 1px solid transparent;

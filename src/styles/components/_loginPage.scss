@@ -1,7 +1,8 @@
 .textBox{
   margin-top:  4rem !important;
-  padding: 8rem 8rem;
-  color: #fff;  
+  padding: 8rem 8vw;
+  color: #fff;
+    
   h1:first-child{
     font-family: 'Megrim';
   } 
@@ -22,18 +23,19 @@
   background-image:url(../images/bg.jpg);
   background-size: cover; 
   background-position: center center;
-  height:100vh; 
+  height: 100vh; 
   z-index: 1;
+  margin:0 !important; 
 
   &:before {
     content: '';
-    position: absolute;
+    position: absolute; 
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    background: radial-gradient(to top right, $primary, $primary, $secondary, $secondary);
-    opacity: .8;
+    left: 0; 
+    background: $gradient;
+    opacity: .8; 
   }
 }
  
