@@ -21,7 +21,7 @@ export class LoginPage extends Component {
 				{	visible &&
 				<div className='textBox'>
 					<h1>xpendify</h1>
-					<h1> Get your expenses <br/> under control</h1>
+					<h2> Get your expenses <br/> under control</h2>
 					<p>xpendify helps you keep track of your expenses <br/>
 					 so you can efficiently manage your finance. </p>
 					 <Button onClick={startLogin}>
