@@ -1,13 +1,15 @@
 $hollowBoxSize: 3em;
 $hollowTiming: .5s;
 
-header { 
+section { 
   background-color: $primary; 
   display: flex !important;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;  
+  margin:0 !important;
+  padding:0 !important;
 } 
 
 .hollowLoader {

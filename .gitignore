@@ -2,9 +2,9 @@
 
 #build
 /build
-
+ngrok
 #dev server
-
+.vscode
 # dependencies
 /node_modules
 

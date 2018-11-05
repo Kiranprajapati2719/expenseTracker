@@ -1,20 +1,37 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {startLogout} from '../actions/auth';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { startLogout } from '../actions/auth';
+import { Menu, Button } from 'semantic-ui-react';
 
-export const Header = ({startLogout}) => (
-    <header>
-    <h1>Expensify</h1>
-        <NavLink to="/dashboard"activeClassName='is-active'> Dashboard </NavLink>
-        <NavLink to="/create"activeClassName='is-active'>Create Expense</NavLink>
-        <button onClick = {startLogout}>Log out</button>
-    <hr/>
-  </header>
+export const Header = ({ startLogout }) => (
+  <Menu secondary pointing size='large' stackable className='nav'>
+    <Menu.Menu>
+      <Menu.Item name='Brand' >
+        <Link to='/dashboard'>
+          <h3 className='brand__name'>Xpendify </h3>
+        </Link>
+      </Menu.Item>
+    </Menu.Menu>
+
+    <Menu.Menu position='right'>
+      <Menu.Item name='overview' />
+      <Menu.Item name='features' />
+      <Menu.Item name='about' />
+      <Menu.Item name='Create xpense' />
+      <Menu.Item>
+        <Button
+          content='Log out'
+          inverted
+          onClick={startLogout}
+        />
+      </Menu.Item>
+    </Menu.Menu>
+  </Menu>
 );
 
 const mapDispatchToProps = (dispatch) => ({
-    startLogout: () => dispatch(startLogout())
+  startLogout: () => dispatch(startLogout())
 });
 
 export default connect(undefined, mapDispatchToProps)(Header);

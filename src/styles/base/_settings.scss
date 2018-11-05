@@ -3,3 +3,4 @@ $hollowDark: #34495e;
 $primary : #df5880; 
 $secondary: #8f27bc;  
 $gradient : radial-gradient(to top right, $primary, $primary, $secondary, $secondary);
+$gradientLeft : linear-gradient(to right, $primary, $secondary, $secondary);

@@ -1,31 +1,15 @@
 .textBox{
-  margin-top:  4rem !important;
+  margin-top:  1rem;
   padding: 8rem 8vw;
   color: #fff;
-     
-  h1{
-    font-family: 'Megrim',sans-serif !important;
-  } 
-  button{
-    margin-top: 2rem !important;
-    background: white !important; 
-    box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05)!important;
-    
-    &:focus,
-    &:hover {
-      box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1)!important;
-      background: white !important;
-    } 
-  } 
 }
 
 .hero{
-  background-image:url(../images/bg.jpg);
+  background:url(../images/bg.jpg) no-repeat;
   background-size: cover; 
   background-position: center center;
-  height: 100vh; 
   z-index: 1;
-  margin:0 !important; 
+  height: 100vh; 
 
   &:before {
     content: '';
@@ -35,6 +19,9 @@
     bottom: 0;
     left: 0; 
     background: $gradient;
+    background-size: cover; 
+    background-position: center center;
+    height: inherit;
     opacity: .8; 
   }
 }
