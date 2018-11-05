@@ -24,7 +24,7 @@ export class LoginPage extends Component {
                   <h2> Get your expenses under control</h2>
                   <p>Xpendify helps you keep track of your expenses
                     so you can efficiently manage your finance. </p>
-                  <Button onClick={startLogin} className='account__btn' style={{ marginTop: '1rem' }} >
+                  <Button onClick={startLogin} >
                     <Icon name='google plus g' color='red'></Icon>
                     &nbsp;
                     Sign in with Google

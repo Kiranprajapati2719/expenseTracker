@@ -2,6 +2,10 @@
   margin-top:  1rem;
   padding: 8rem 8vw;
   color: #fff;
+  button{
+    @include btn;
+    margin-top: 1rem !important;
+  }
 }
 
 .hero{

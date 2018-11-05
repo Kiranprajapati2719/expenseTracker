@@ -1,19 +1,9 @@
 *{
   margin: 0;
   font-family: 'Lato', serif;
-
-  p{
-    text-align: justify !important;
-  }
 }
 
-.brand__name{
-  font-family: 'Megrim';
-  text-transform: capitalize;
-  color: #fff !important;
-} 
-
-.account__btn{
+@mixin btn{
   background: white !important; 
   box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05)!important;
   
@@ -22,4 +12,18 @@
     box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1)!important;
     background: white !important;
   } 
+} 
+
+@mixin font{
+  font-size: 1 rem;
+  color: $gray;
+}
+
+.normalFont{
+  @include font;
+}
+
+.brand__name{
+  font-family: 'Megrim';
+  text-transform: capitalize; 
 } 

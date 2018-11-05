@@ -1,11 +1,7 @@
-.nav{
-  background: $gradientLeft !important;
+.item{
+  color: $primary !important;
+  a{
+  color: $primary !important;
+  }
 }
  
-.item{
-  color: #fff !important;
-}
-
-.item:hover{
-  color: $primary !important;
-}

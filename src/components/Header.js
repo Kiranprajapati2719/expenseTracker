@@ -2,31 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
-import { Menu, Button } from 'semantic-ui-react';
+import { Menu, Container } from 'semantic-ui-react';
 
 export const Header = ({ startLogout }) => (
-  <Menu secondary pointing size='large' stackable className='nav'>
-    <Menu.Menu>
-      <Menu.Item name='Brand' >
+  <Menu secondary size='large' stackable>
+    <Container>
+      <Menu.Item name='Brand'>
         <Link to='/dashboard'>
-          <h3 className='brand__name'>Xpendify </h3>
+          <h2 className='brand__name'>Xpendify </h2>
         </Link>
       </Menu.Item>
-    </Menu.Menu>
 
-    <Menu.Menu position='right'>
-      <Menu.Item name='overview' />
-      <Menu.Item name='features' />
-      <Menu.Item name='about' />
-      <Menu.Item name='Create xpense' />
-      <Menu.Item>
-        <Button
-          content='Log out'
-          inverted
+      <Menu.Menu position='right'>
+        <Menu.Item name='Expenses' />
+        <Menu.Item name='Report' />
+        <Menu.Item name='Create xpense'>
+          <Link to='/create'>
+            Add
+          </Link>
+        </Menu.Item>
+        <Menu.Item
           onClick={startLogout}
-        />
-      </Menu.Item>
-    </Menu.Menu>
+          name='Log out'
+        >
+        </Menu.Item>
+      </Menu.Menu>
+    </Container>
   </Menu>
 );
 
