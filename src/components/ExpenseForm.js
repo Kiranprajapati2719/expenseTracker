@@ -55,7 +55,7 @@ export default class ExpenseForm extends React.Component{
   }
   render(){
     return(
-      <div>
+      <>
         <form onSubmit = {this.onSubmit}>
         {this.state.error && <p> {this.state.error}</p>}
         <input
@@ -86,7 +86,7 @@ export default class ExpenseForm extends React.Component{
           />
           <button>Add Expense</button>
         </form>
-      </div>
+      </>
     );
   }
 }

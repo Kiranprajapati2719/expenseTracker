@@ -1,15 +1,18 @@
 *{
   margin: 0;
-  font-family: 'Lato', serif;
+  font-family: 'Lato', serif; 
 }
 
+@mixin shadow{
+  box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1)!important;
+}
+
+//Sign in button
 @mixin btn{
   background: white !important; 
-  box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05)!important;
-  
   &:focus,
   &:hover {
-    box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1)!important;
+    @include shadow;  
     background: white !important;
   } 
 } 
@@ -17,6 +20,7 @@
 @mixin font{
   font-size: 1 rem;
   color: $gray;
+  font-weight: normal;
 }
 
 .normalFont{
@@ -27,3 +31,32 @@
   font-family: 'Megrim';
   text-transform: capitalize; 
 } 
+
+// basic input tags
+@mixin input{
+  border:none; 
+  line-height: 20px;
+  font-size: 1rem;
+	color: $dark-gray; 
+	height: 28px;
+  letter-spacing: 1px;
+  outline-width: 0;
+  padding: 0 20px; 
+}
+
+// Option buttons (rounded)
+@mixin btn__round($color, $background){ 
+  @include input;
+  @include font;
+  color: $color;
+  background: $background;
+  box-shadow: $shadow; 
+  border-radius: 15px; 
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  width: fit-content;    
+  cursor: pointer; 
+}
+
+

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../actions/filters';
 import { DateRangePicker } from 'react-dates';
-import { Container } from 'semantic-ui-react';
+import { Container, Grid } from 'semantic-ui-react';
 
 export class ExpenseListFilters extends React.Component {
   state = { calenderFocused: null };
@@ -22,37 +22,46 @@ export class ExpenseListFilters extends React.Component {
 
   onSortChange = (e) => {
     if (e.target.value === "date") {
-      this.props.sortByDate();
-    } else if (e.target.value === "amount") {
       this.props.sortByAmount();
+    } else if (e.target.value === "amount") {
+      this.props.sortByDate();
     }
   }
 
   render() {
     return (
       <Container>
-        <input
-          type="text"
-          value={this.props.filters.text}
-          onChange={this.onTextChange}
-        />
-        <select
-          value={this.props.filters.sortBy}
-          onChange={this.onSortChange}
-        >
-          <option value="date">Date</option>
-          <option value="amount">Amount</option>
-        </select>
-        <DateRangePicker
-          startDate={this.props.filters.startDate}
-          endDate={this.props.filters.endDate}
-          onDatesChange={this.onDatesChange}
-          focusedInput={this.state.calenderFocused}
-          onFocusChange={this.onFocusChange}
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-        />
-      </Container>
+        <Grid stackable>
+          <Grid.Row columns={3}>
+            <Grid.Column>
+              <input
+                type="text"
+                value={this.props.filters.text}
+                onChange={this.onTextChange}
+                placeholder="Filter expenses"
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <span as="h4">Sort By:</span>
+              <button className="btn__round"
+                value={this.props.filters.sortBy}
+                onClick={this.onSortChange}
+              > {this.props.filters.sortBy}</button>
+            </Grid.Column>
+            <Grid.Column>
+              <DateRangePicker
+                startDate={this.props.filters.startDate}
+                endDate={this.props.filters.endDate}
+                onDatesChange={this.onDatesChange}
+                focusedInput={this.state.calenderFocused}
+                onFocusChange={this.onFocusChange}
+                numberOfMonths={1}
+                isOutsideRange={() => false}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container >
     );
   }
 }

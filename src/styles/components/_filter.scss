@@ -1,0 +1,22 @@
+input[type="text"]{ 
+  @include input;  
+  box-shadow: $shadow-light inset;
+  border-radius: 8px;
+} 
+
+.bg__list{
+  background: #515151;
+  padding: 10px !important;
+}
+
+.btn__round{
+  @include btn__round($gray, #fff);
+  margin-left: 10px;
+}
+
+.btn__round_p{
+  @include btn__round(#fff, $secondary);
+  margin-left: 10px;
+  background-color: $secondary;
+  color:#fff;
+}

@@ -5,19 +5,19 @@ import numeral from 'numeral';
 import { Container, Segment, Grid } from 'semantic-ui-react';
 
 const ExpenseListItem = ({ id, description, amount, createdAt }) => (
-  <Container>
+  <Container className="bg__list">
     <Segment>
-      <Grid container textAlign='center'>
-        <Grid.Column floated='left' textAlign='left' width={12}>
+      <Grid.Row>
+        <Grid.Column floated='left' textAlign='left' width={10}>
           <Link to={`/edit/${id}`}>
             <h3>{description}</h3>
           </Link>
         </Grid.Column>
-        <Grid.Column floated='right' width={4}>
-          <h3>{numeral(amount / 100).format('$, 0.00')}</h3>
+        <Grid.Column floated='right' width={6}>
+          <h3 style={{ fontWeight: 'lighter' }}>{numeral(amount / 100).format('$, 0.00')}</h3>
           <p className='normalFont'>{moment(createdAt).format('MMM Do, YYYY')}</p>
         </Grid.Column>
-      </Grid>
+      </Grid.Row>
     </Segment>
   </Container>
 );
